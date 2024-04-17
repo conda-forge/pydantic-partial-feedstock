@@ -1,4 +1,4 @@
-{% set version = "0.5.4" %}
+{% set version = "0.5.5" %}
 
 package:
   name: pydantic-partial
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/p/pydantic-partial/pydantic_partial-{{ version }}.tar.gz
-    sha256: c4d2d5790d897c8ebec18e13a6050be3134dcc4e478b3248aed4f960a152019b
+    sha256: a903bdf6b2b30c850865843645432537eae81713fba59ee03bae567eb4c4ff3b
   - folder: src
     url: https://github.com/team23/pydantic-partial/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 04ad3b7257881db42af406ac0f199924ff4966148c2243bcae06ea5a21d10921
+    sha256: ff122e16bdd5205e25cec5480449c7a442685d47ea43614740e7eef75b4433c1
 
 build:
   noarch: python
