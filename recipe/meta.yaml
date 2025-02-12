@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -9,10 +9,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.org/packages/source/p/pydantic-partial/pydantic_partial-{{ version }}.tar.gz
-    sha256: dfbf6f3d97ba93f39fa6fc610e31d308f2010f64e3a1e24c531160fbe8d48660
+    sha256: c3006ef577bcb9670f277cdf0ac74735917494f637d3d1faa675d40c31ec018a
   - folder: src
     url: https://github.com/team23/pydantic-partial/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 17c04ec3fce22c5299d15ce2e487387372416926bac10be1d05581cb567f2d26
+    sha256: 93f4db0508891aacd2eba53d153cb40efc6f9e35c999b4a3e132addf1e637575
 
 build:
   noarch: python
