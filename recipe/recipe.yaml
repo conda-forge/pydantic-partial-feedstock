@@ -28,14 +28,16 @@ requirements:
     - poetry-core >=1.0.0
     - python ${{ python_min }}.*
   run:
-    - pydantic >=1.9.0,<3.0.0
+    - pydantic >=2.0.0,<3.0.0
     - python >=${{ python_min }}
 
 tests:
   - python:
-      pip_check: true
-      python_version: ${{ python_min }}.*
       imports: pydantic_partial
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
   - files:
       source:
         - src/tests/
