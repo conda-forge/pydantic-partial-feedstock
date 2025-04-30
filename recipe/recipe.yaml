@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.7.0
+  version: "0.8.0"
 
 package:
   name: pydantic-partial
@@ -9,10 +9,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pydantic-partial/pydantic_partial-${{ version }}.tar.gz
-    sha256: c3006ef577bcb9670f277cdf0ac74735917494f637d3d1faa675d40c31ec018a
+    sha256: 7a3d6584e4bd1636d7edde29971e1bccd50c97409b9ff0a78b1f4b4ff96ed03f
     target_directory: dist
   - url: https://github.com/team23/pydantic-partial/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 93f4db0508891aacd2eba53d153cb40efc6f9e35c999b4a3e132addf1e637575
+    sha256: e9e634fc23a8116b9548835060aa70aaaa5b3b85f7c45da54c9836eeb346d5d6
     target_directory: src
 
 build:
@@ -28,14 +28,16 @@ requirements:
     - poetry-core >=1.0.0
     - python ${{ python_min }}.*
   run:
-    - pydantic >=1.9.0,<3.0.0
+    - pydantic >=2.0.0,<3.0.0
     - python >=${{ python_min }}
 
 tests:
   - python:
-      pip_check: true
-      python_version: ${{ python_min }}.*
       imports: pydantic_partial
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
   - files:
       source:
         - src/tests/
