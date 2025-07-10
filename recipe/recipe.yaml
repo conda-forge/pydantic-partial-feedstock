@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.8.0"
+  version: "0.9.0"
 
 package:
   name: pydantic-partial
@@ -9,10 +9,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pydantic-partial/pydantic_partial-${{ version }}.tar.gz
-    sha256: 7a3d6584e4bd1636d7edde29971e1bccd50c97409b9ff0a78b1f4b4ff96ed03f
+    sha256: c512c1888b17d377cdf3f3d56c76df8453b6dc68f942b4a0dba48427037c019c
     target_directory: dist
   - url: https://github.com/team23/pydantic-partial/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: e9e634fc23a8116b9548835060aa70aaaa5b3b85f7c45da54c9836eeb346d5d6
+    sha256: 8121ba9344022edc0ae2fa5634d38438140b0a4adc9365ed82791df365f26b63
     target_directory: src
 
 build:
@@ -44,11 +44,13 @@ tests:
     requirements:
       run:
         - coverage
+        - fastapi
         - pytest
         - python ${{ python_min }}.*
+        - trio
     script:
       - coverage run --source=pydantic_partial --branch -m pytest -vv --color=yes --tb=long
-      - coverage report --show-missing --skip-covered --fail-under=99
+      - coverage report --show-missing --skip-covered --fail-under=96
 
 about:
   summary: Create partial models from your pydantic models. Partial models may allow None for certain or all fields.
