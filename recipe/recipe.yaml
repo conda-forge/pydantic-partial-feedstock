@@ -44,6 +44,7 @@ tests:
     requirements:
       run:
         - coverage
+        - fastapi
         - pytest
         - python ${{ python_min }}.*
     script:
