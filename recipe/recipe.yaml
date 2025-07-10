@@ -47,6 +47,7 @@ tests:
         - fastapi
         - pytest
         - python ${{ python_min }}.*
+        - trio
     script:
       - coverage run --source=pydantic_partial --branch -m pytest -vv --color=yes --tb=long
       - coverage report --show-missing --skip-covered --fail-under=99
