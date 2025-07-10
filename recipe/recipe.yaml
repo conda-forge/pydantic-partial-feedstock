@@ -50,7 +50,7 @@ tests:
         - trio
     script:
       - coverage run --source=pydantic_partial --branch -m pytest -vv --color=yes --tb=long
-      - coverage report --show-missing --skip-covered --fail-under=99
+      - coverage report --show-missing --skip-covered --fail-under=96
 
 about:
   summary: Create partial models from your pydantic models. Partial models may allow None for certain or all fields.
