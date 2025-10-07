@@ -55,7 +55,7 @@ tests:
 about:
   summary: Create partial models from your pydantic models. Partial models may allow None for certain or all fields.
   license: MIT
-  license_file: src/LICENSE
+  license_file: dist/LICENSE
   homepage: https://github.com/team23/pydantic-partial
 
 extra:
