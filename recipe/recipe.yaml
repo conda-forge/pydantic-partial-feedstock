@@ -2,6 +2,7 @@ schema_version: 1
 
 context:
   version: "0.10.2"
+  python_check_max: "3.14"
 
 package:
   name: pydantic-partial
@@ -25,7 +26,7 @@ build:
 requirements:
   host:
     - pip
-    - uv-build >=0.8.22,<0.9.0
+    - uv-build >=0.8.22,<0.11.0
     - python ${{ python_min }}.*
   run:
     - pydantic >=2.0.0,<3.0.0
@@ -37,7 +38,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - src/tests/
@@ -56,7 +57,8 @@ about:
   summary: Create partial models from your pydantic models. Partial models may allow None for certain or all fields.
   license: MIT
   license_file: dist/LICENSE
-  homepage: https://github.com/team23/pydantic-partial
+  homepage: https://pypi.org/project/pydantic-partial
+  repository: https://github.com/team23/pydantic-partial
 
 extra:
   recipe-maintainers:
