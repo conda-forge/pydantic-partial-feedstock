@@ -1,7 +1,8 @@
 schema_version: 1
 
 context:
-  version: "0.10.1"
+  version: "0.10.2"
+  python_check_max: "3.14"
 
 package:
   name: pydantic-partial
@@ -9,10 +10,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pydantic-partial/pydantic_partial-${{ version }}.tar.gz
-    sha256: 32cd8e2df06793375d17603c33a6cce17a94419ba04313de57d6a31c2e9501e1
+    sha256: 8dbfc9843c8ca854c56c368a276e2a61d9f65beefd1deee5c4dd8ed7d74435fd
     target_directory: dist
   - url: https://github.com/team23/pydantic-partial/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: f021d898887490da045745cc77963b3041bc5548faef12e3ceda4f6a52659455
+    sha256: 82644a8553683507607f73f65b2c9cc219d5dcd8c97b945c2ea1c3fa5df85ddb
     target_directory: src
 
 build:
@@ -25,7 +26,7 @@ build:
 requirements:
   host:
     - pip
-    - uv-build >=0.8.22,<0.9.0
+    - uv-build >=0.8.22,<0.11.0
     - python ${{ python_min }}.*
   run:
     - pydantic >=2.0.0,<3.0.0
@@ -37,7 +38,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - src/tests/
@@ -56,7 +57,8 @@ about:
   summary: Create partial models from your pydantic models. Partial models may allow None for certain or all fields.
   license: MIT
   license_file: dist/LICENSE
-  homepage: https://github.com/team23/pydantic-partial
+  homepage: https://pypi.org/project/pydantic-partial
+  repository: https://github.com/team23/pydantic-partial
 
 extra:
   recipe-maintainers:

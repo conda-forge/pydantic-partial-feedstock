@@ -3,11 +3,13 @@ About pydantic-partial-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pydantic-partial-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/team23/pydantic-partial
+Home: https://pypi.org/project/pydantic-partial
 
 Package license: MIT
 
 Summary: Create partial models from your pydantic models. Partial models may allow None for certain or all fields.
+
+Development: https://github.com/team23/pydantic-partial
 
 Current build status
 ====================
