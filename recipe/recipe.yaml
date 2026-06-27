@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.10.2"
+  version: "0.11.1"
   python_check_max: "3.14"
 
 package:
@@ -10,10 +10,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pydantic-partial/pydantic_partial-${{ version }}.tar.gz
-    sha256: 8dbfc9843c8ca854c56c368a276e2a61d9f65beefd1deee5c4dd8ed7d74435fd
+    sha256: 172874d96144eb947f7b11f3669888560bf11ee353f45edf129554bca634862a
     target_directory: dist
   - url: https://github.com/team23/pydantic-partial/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 82644a8553683507607f73f65b2c9cc219d5dcd8c97b945c2ea1c3fa5df85ddb
+    sha256: fd9086ec68e1e20841af1b06c87fb59e55dd7e0da83df451b350877c856825a0
     target_directory: src
 
 build:
